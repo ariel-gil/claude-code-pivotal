@@ -1,0 +1,62 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "Bash(git *)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(cat *)",
+      "Bash(echo *)",
+      "Bash(pwd)",
+      "Bash(which *)",
+      "Bash(python *)",
+      "Bash(python3 *)",
+      "Bash(pip install *)",
+      "Bash(pip3 install *)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(node *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(wc *)",
+      "Bash(sort *)",
+      "Bash(unzip *)",
+      "Bash(curl *)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~*)",
+      "Bash(sudo rm *)",
+      "Bash(sudo dd *)",
+      "Bash(* | bash)",
+      "Bash(* | sh)",
+      "Bash(curl * | bash *)",
+      "Bash(wget * | bash *)",
+      "Bash(chmod 777 *)",
+      "Bash(> /etc/*)",
+      "Bash(mkfs*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ~/.claude/hooks/safety_check.py"
+          }
+        ]
+      }
+    ]
+  }
+}
