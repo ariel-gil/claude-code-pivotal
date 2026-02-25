@@ -1,0 +1,27 @@
+# Example CLAUDE.md — Personal Workspace Setup
+#
+# This file goes at the ROOT of your project (or in ~/.claude/CLAUDE.md for global settings).
+# Claude Code reads it automatically every conversation.
+#
+# Think of it as "instructions for your AI pair programmer."
+
+## Project Context
+- This is a Python project using Flask
+- We use pytest for testing
+- Database is PostgreSQL via SQLAlchemy
+
+## Coding Conventions
+- Use snake_case for functions and variables
+- Keep functions under 30 lines
+- Always add type hints to function signatures
+- Prefer f-strings over .format()
+
+## Workflow Preferences
+- Run tests before committing
+- Write commit messages in imperative mood ("Add feature" not "Added feature")
+- Never push directly to main — always use branches
+
+## Things to Remember
+- The API key is stored in .env (never commit it)
+- Port 5000 is reserved for the dev server
+- Use `pip install -r requirements.txt` to set up dependencies

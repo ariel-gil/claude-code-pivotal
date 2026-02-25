@@ -1,0 +1,36 @@
+# User Context
+#
+# This is an example of a personal context section you might add to your CLAUDE.md.
+# It helps Claude understand who you are so it can tailor responses accordingly.
+# Replace the placeholders with your own details.
+
+## Background
+- [Your degree/field] (graduated [year]).
+- Post-grad: worked at [company/industry] ([years]).
+- Career pivot into [current field] (~[year]).
+- Currently: [Role] at [Organization].
+
+## Strengths
+- [Strength 1, e.g. "People management"]
+- [Strength 2, e.g. "Good at short, targeted execution"]
+- [Strength 3, e.g. "Synthesizing across domains"]
+- [Weakness to be aware of, e.g. "Less suited to long open-ended projects"]
+
+## Current Interests
+- **[Interest 1]**: Brief description of what you're exploring and why.
+- **[Interest 2]**: Brief description.
+- **Workflow automation**: Using Claude Code as a daily collaborator — building skills, hooks, and tools to progressively automate personal workflows.
+
+## Working Style
+- [e.g. "Needs clear motivation/purpose for tasks"]
+- [e.g. "Better at bursts than sustained grind"]
+- [e.g. "Gets frustrated when work feels like a chore or doesn't leverage strengths"]
+
+## Coding
+- [Your level, e.g. "Mostly relies on Claude to write code; gives direction and reviews."]
+- [e.g. "Can read and understand code but doesn't write it fluently."]
+
+## Interaction Preferences
+- [e.g. "Be direct and honest. Push back when something seems off."]
+- [e.g. "Uses PowerShell on Windows."]
+- [e.g. "Prefers scalable, well-structured code."]
