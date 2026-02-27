@@ -13,24 +13,18 @@ That's it. Drop in your writing, Claude figures out your voice.
 ```
 .claude/
   skills/
-    write.md              <-- The skill prompt (tells Claude to analyze your samples)
-
-writing-samples/          <-- Your own writing (2-4 pieces at different formality levels)
-  sample-blog.md          <-- Casual/reflective
-  sample-technical.md     <-- Formal/structured
-
-writing-advice/           <-- OPTIONAL: style guides you follow
-  style-guide.md
+    write.md    <-- The skill prompt (includes writing samples inline)
 ```
+
+Everything lives in one file. The placeholder snippets in `write.md` cover five registers (casual, technical, persuasive, instructional, formal). Replace them with your own writing.
 
 ## How to Set This Up
 
 1. Copy `write.md` into your project's `.claude/skills/` folder
-2. Create a `writing-samples/` folder with 2-4 pieces of your own writing
-   - Include different registers: a blog post, a paper, a personal reflection
+2. Replace the placeholder snippets with 2-5 pieces of your own writing
+   - Include different registers: a blog post, a technical explanation, a personal reflection
    - Claude needs to see your range to match the right tone
-3. Optionally add a `writing-advice/` folder with style guides you like
-4. Invoke with `/write` in Claude Code
+3. Invoke with `/write` in Claude Code
 
 ## Why This Works
 
