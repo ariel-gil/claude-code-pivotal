@@ -81,3 +81,33 @@ project/subproject/CLAUDE.md     # Subproject-level: specific context
 
 **The compound effect:** Every time Claude does something you like, add it as an instruction. Every time it does something annoying, add a rule against it. After a few weeks, your CLAUDE.md captures your working style better than you could describe it upfront.
 
+---
+
+## 4. Building tools to fill gaps
+
+Claude Code's built-in `WebFetch` tool often fails on JS-rendered sites, paywalled content, or sites that block scrapers. Rather than working around this every time, I asked Claude to write a Python script that handles it — and it did, in one session.
+
+The result: a `fetch-url.py` script that routes URLs to the right strategy:
+- **LessWrong / Alignment Forum** → hits the GraphQL API directly (fast, no browser needed)
+- **Everything else** → headless Chromium via Playwright (renders JS)
+- **Simple sites** → basic HTTP with a `--no-js` flag
+
+Now when WebFetch fails, Claude falls back to `python fetch-url.py <url>` automatically (this is in the CLAUDE.md). One session of work, used in dozens of sessions since.
+
+This is a good example of the general pattern: **when a built-in tool doesn't work for your use case, have Claude build a better one.** The tool doesn't need to be general-purpose or polished — it just needs to solve your specific problem.
+
+---
+
+## 5. What goes wrong
+
+It's not all smooth. After ~65 sessions, here's what consistently causes friction:
+
+**Claude picks the wrong approach on the first try.** This was the most common issue — 26 times in a month. Shallow research when you want depth, aggressive logic that breaks edge cases, wrong output format. The fix: be more specific upfront about what you want. "Critical analysis, not a tool catalog" or "conservative matching only" saves a round-trip.
+
+**Subagents crash on permissions.** I tried spawning 10 parallel research agents to explore AI safety topics. They all lacked the right permissions and returned nothing. The main agent had to recover manually. Parallel agents are powerful but fragile — start with 2-3 before going wide.
+
+**Windows environment friction.** Zone.Identifier files breaking git submodules, PowerShell/bash syntax mismatches, file locks preventing moves. If you're on Windows, expect to hit this and add workarounds to your CLAUDE.md as you discover them.
+
+**Iterative steering > perfect prompts.** The most productive pattern isn't writing the perfect prompt upfront — it's giving a loose directive, seeing what comes back, and course-correcting. This is fine. Budget for 2-3 rounds of steering on anything non-trivial.
+
+**The best failure:** I told Claude to "freely explore AI safety research topics and develop research taste." It ambitiously spawned 10 parallel research agents — which all immediately crashed because they didn't have the right permissions. The main agent recovered, pivoted to designing a novel sycophancy experiment, then discovered that Sharma et al. (ICLR 2024) and the ELEPHANT paper had already covered the exact same ground. One session, zero usable output, two good lessons: check permissions before going wide, and check prior work before designing experiments.
