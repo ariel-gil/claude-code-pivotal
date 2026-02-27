@@ -6,7 +6,7 @@ Companion repo for the Claude Code workshop at Pivotal Research. Aimed at techni
 
 | File / Folder | What it is |
 |---------------|------------|
-| `demo/` | **Start here.** Getting-started guide, example files, and ideas for things to try |
+| `demo/` | **Start here.** Getting-started guide, example files, ideas, and real workflow case studies |
 | `settings.json` | Sample permissions config — auto-approves safe actions, blocks dangerous ones |
 | `safety_check.py` | A safety hook script that blocks destructive bash commands |
 | `claude-code-permissions-guide.md` | Short guide to how permissions and settings work |
@@ -15,7 +15,8 @@ Companion repo for the Claude Code workshop at Pivotal Research. Aimed at techni
 
 1. Head to **[demo/README.md](demo/README.md)** — it walks you through setup and first steps
 2. Once comfortable, check **[demo/IDEAS.md](demo/IDEAS.md)** for task ideas relevant to your work
-3. When you want to customize permissions, see **[claude-code-permissions-guide.md](claude-code-permissions-guide.md)**
+3. See **[demo/real-workflows.md](demo/real-workflows.md)** for examples from about a month of daily use
+4. When you want to customize permissions, see **[claude-code-permissions-guide.md](claude-code-permissions-guide.md)**
 
 ## Quick links
 

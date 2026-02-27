@@ -63,6 +63,8 @@ Check out `user-context.md.example` for an example of adding personal context (y
 | `buggy_app.py` | Python script with intentional bugs — good for a first test |
 | `sample-write-skill/` | Example custom `/write` skill that matches your writing style |
 | `IDEAS.md` | Bigger list of things to try — broken down by technical safety and governance |
+| `real-workflows.md` | Examples from about a month of daily use — what worked, what was over-engineered |
+| `sample-memory.md` | Example of a persistent memory file and how it accumulates over time |
 
 ---
 
@@ -151,6 +153,9 @@ When doing web searches or fetching URLs: if a fetch fails or returns an error,
 explicitly flag it (e.g. "Could not access [URL] — got [error]").
 Do not silently substitute other sources.
 ```
+
+### See what daily use looks like after a while
+Check out **[real-workflows.md](real-workflows.md)** for examples from about a month of daily use — including a handwriting transcription pipeline, task triage with adversarial self-review, and how CLAUDE.md files build up over time. **[sample-memory.md](sample-memory.md)** shows what persistent memory looks like in practice.
 
 ### More ideas
 See **[IDEAS.md](IDEAS.md)** for a bigger list broken down by technical safety and governance work.
