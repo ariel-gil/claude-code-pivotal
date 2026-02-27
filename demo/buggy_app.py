@@ -21,15 +21,16 @@ def create_task(title, priority="medium"):
 
 def add_task(task_list, task):
     """Add a task to the list. Should prevent duplicates by title."""
-    # BUG: This always adds — never checks for duplicates
+    for existing in task_list:
+        if existing["title"] == task["title"]:
+            return task_list
     task_list.append(task)
     return task_list
 
 
 def get_high_priority(task_list):
     """Return only high-priority tasks."""
-    # BUG: Wrong comparison — should check for "high", not "low"
-    return [t for t in task_list if t["priority"] == "low"]
+    return [t for t in task_list if t["priority"] == "high"]
 
 
 def summarize(task_list):
@@ -37,8 +38,7 @@ def summarize(task_list):
     print(f"You have {len(task_list)} tasks:")
     for i, task in enumerate(task_list):
         status = "done" if task["done"] else "pending"
-        # BUG: f-string references wrong variable name
-        print(f"  {i+1}. {task['titl']} [{task['priority']}] — {status}")
+        print(f"  {i+1}. {task['title']} [{task['priority']}] — {status}")
 
 
 def remove_task(task_list, title):
@@ -46,7 +46,7 @@ def remove_task(task_list, title):
     for i, task in enumerate(task_list):
         if task["title"] == title:
             task_list.pop(i)
-            # BUG: Should return True here, but falls through
+            return True
     return False
 
 
